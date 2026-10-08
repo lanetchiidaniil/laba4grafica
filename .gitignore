@@ -1,0 +1,9 @@
+build/
+.vscode/
+*.log
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.dll
+*.a
