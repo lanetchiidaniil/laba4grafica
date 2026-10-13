@@ -38,6 +38,13 @@ if(NOT stb_POPULATED)
     FetchContent_Populate(stb)
 endif()
 
+FetchContent_Declare(
+    tinygltf
+    GIT_REPOSITORY https://github.com/syoyo/tinygltf.git
+    GIT_TAG v2.8.19
+)
+FetchContent_MakeAvailable(tinygltf)
+
 add_executable(OpenGL_Lab4
     src/main.cpp
     src/Shader.cpp
@@ -50,6 +57,7 @@ target_include_directories(OpenGL_Lab4 PRIVATE
     ${GLAD_BINARY_DIR}/include
     ${glm_SOURCE_DIR}
     ${stb_SOURCE_DIR}
+    ${tinygltf_SOURCE_DIR}
 )
 
 find_package(OpenGL REQUIRED)

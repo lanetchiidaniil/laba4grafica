@@ -30,5 +30,11 @@ if not exist ".\build\OpenGL_Lab4.exe" (
     exit /b 1
 )
 
+for %%D in (libstdc++-6.dll libgcc_s_seh-1.dll libwinpthread-1.dll) do (
+    if exist "%MINGW%\%%D" (
+        copy /Y "%MINGW%\%%D" ".\build\%%D" >nul
+    )
+)
+
 echo BUILD_OK
 start "" ".\build\OpenGL_Lab4.exe"
