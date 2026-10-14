@@ -67,3 +67,7 @@ target_link_libraries(OpenGL_Lab4 PRIVATE
     glad
     OpenGL::GL
 )
+
+if(WIN32)
+    target_link_libraries(OpenGL_Lab4 PRIVATE winmm)
+endif()
